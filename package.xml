@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package>
+	<displayName>Mouf Helpers</displayName>
+	<shortDescription>This package contains a set of utility classes that will help you build UI for Mouf. This is mostly useful for package builders if they
+	want to provide advanced UI, etc....</shortDescription>
+	<docUrl></docUrl>
+	<logo>logo.png</logo>
+	<dependencies>
+	</dependencies>
+	<adminRequires>
+		<require>MoufHtmlHelper.php</require>
+		<require>MoufProxyInstance.php</require>
+		<require>MoufProxy.php</require>
+	</adminRequires>
+</package>
