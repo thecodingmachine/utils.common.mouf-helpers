@@ -2,6 +2,8 @@
 namespace Mouf\Utils\Common\MoufHelpers;
 
 
+use Mouf\Reflection\MoufReflectionProxy;
+
 /**
  * This class is a utility class used to perform requests on files in Mouf. This is usually done from the Mouf admin, to query the Mouf application.
  *

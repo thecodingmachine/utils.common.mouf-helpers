@@ -21,10 +21,11 @@ class MoufHtmlHelper {
 	 */
 	public static function drawInstancesDropDown($label, $name, $class, $canBeNull = false, $selectedInstance = null,  $selfedit = "false") {
 		
-		$instanceList = MoufProxy::request("mouf/direct/get_instances.php", array("class"=>$class, "selfedit"=>$selfedit, "encode"=>"php"));
+		$instanceList = MoufProxy::request("src/direct/get_instances.php", array("class"=>$class, "selfedit"=>$selfedit, "encode"=>"php"));
 		
-		echo "<div>";
-		echo "<label for='moufwidget".self::$cnt."'>".$label."</label>";
+		echo '<div class="control-group">';
+		echo "<label class='control-label' for='moufwidget".self::$cnt."'>".$label."</label>";
+		echo '<div class="controls">';
 		echo '<select id="moufwidget'.self::$cnt.'" name="'.$name.'" >';
 		if ($canBeNull) {
 			echo '<option value=""></option>';
@@ -38,6 +39,7 @@ class MoufHtmlHelper {
 			echo '<option value="'.plainstring_to_htmlprotected($instanceList[$i]).'" '.$selected.'>'.$instanceList[$i].'</option>';
 		}
 		echo '</select>';
+		echo "</div>";
 		echo "</div>";
 		self::$cnt++;
 	}
