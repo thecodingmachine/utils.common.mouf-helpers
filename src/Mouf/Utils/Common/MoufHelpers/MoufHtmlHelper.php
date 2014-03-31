@@ -1,6 +1,8 @@
 <?php
 namespace Mouf\Utils\Common\MoufHelpers;
 
+use \Mouf\Reflection\MoufReflectionProxy;
+
 /**
  * This class contains utility functions to draw common Mouf elements (dropdowns of instances, etc...)
  *
@@ -21,7 +23,7 @@ class MoufHtmlHelper {
 	 */
 	public static function drawInstancesDropDown($label, $name, $class, $canBeNull = false, $selectedInstance = null,  $selfedit = "false") {
 		
-		$instanceList = MoufProxy::request("src/direct/get_instances.php", array("class"=>$class, "selfedit"=>$selfedit, "encode"=>"php"));
+        $instanceList = MoufReflectionProxy::getInstances($class, $selfedit == 'true');
 		
 		echo '<div class="control-group">';
 		echo "<label class='control-label' for='moufwidget".self::$cnt."'>".$label."</label>";
